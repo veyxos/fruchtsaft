@@ -146,7 +146,7 @@
 
         $thisLink = "http://veyxos.de/fruchtsaft?q=$int";
         $thisLinkEncoded = urlencode($thisLink);
-        $quoteEncoded = urlencode($quote[$int]);
+        $quoteEncoded = urlencode(str_replace("<br>","\n",$quote[$int]));
 
         print "<blockquote>{$quote[$int]}</blockquote>
         <cite>{$citeLink[$cite[$int]]}, {$year[$int]}</cite>
