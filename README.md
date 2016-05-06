@@ -5,5 +5,5 @@ Für weitere Zitate bin ich immer dankbar.
 
 ## Links
 - [Fruchtsaft](http://veyxos.de/fruchtsaft)
-- [Vorschläge für weitere Zitate](https://twitter.com/itent/tweet?hashtag=fruchtsaft&via=veyxos)
+- [Vorschläge für weitere Zitate](https://twitter.com/intent/tweet?hashtag=fruchtsaft&via=veyxos)
 - [TheEmerl](https://twitter.com/TheEmerl)
