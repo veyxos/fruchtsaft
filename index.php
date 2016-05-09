@@ -94,7 +94,9 @@
           10 => "Ich bin schon groß und vier,<br>komm doch und spiel mit mir,<br>ich lad dich ein,<br>ich bin Saitama.",
           11 => "Saitama ist das schlauste Brot im ganzen Commonwealth",
           12 => "Tischventilatoren sind toll,<br>die drehen sich!",
-          13 => "Wie kriegen wir dieses Gesicht jetzt so hässlich wie möglich?"
+          13 => "Wie kriegen wir dieses Gesicht jetzt so hässlich wie möglich?",
+          14 => "Die Hilde wird mich nicht aufhalten!",
+          15 => "Kauf dir Battleborn, Mike!"
         );
         $cite = array(
           0 => "emerl",
@@ -110,7 +112,9 @@
           10 => "emerl",
           11 => "emerl",
           12 => "emerl",
-          13 => "emerl"
+          13 => "emerl",
+          14 => "emerl",
+          15 => "emerl"
         );
         $year = array(
           0 => "2015",
@@ -126,20 +130,22 @@
           10 => "2015",
           11 => "2015",
           12 => "2015",
-          13 => "2016"
+          13 => "2016",
+          14 => "2016",
+          15 => "2016"
         );
         $citeLink = array(
           "emerl" => '<a href="https://twitter.com/TheEmerl">TheEmerl</a>',
           "darky" => '<a href="https://twitter.com/Darkyyx">Darky</a>'
         );
 
-        if($_GET["q"] && $_GET["q"] <= 13 && $_GET["q"] >= 0) {
+        if($_GET["q"] && $_GET["q"] <= 15 && $_GET["q"] >= 0) {
           $int = $_GET["q"];
         } else {
-          $int = rand(0,13);
+          $int = rand(0,15);
           if($_GET["not"]) {
             for( ;$int == $_GET["not"]; ) {
-               $int = rand(0,13);
+               $int = rand(0,15);
             }
           }
         }
@@ -150,7 +156,7 @@
 
         print "<blockquote>{$quote[$int]}</blockquote>
         <cite>{$citeLink[$cite[$int]]}, {$year[$int]}</cite>
-        <footer><a href=\"http://veyxos.de/fruchtsaft?not=$int\">Ein neues Zitat raussuchen.</a> | <a id=\"twttr\" href=\"https://twitter.com/intent/tweet?text=$quoteEncoded&url=$thisLinkEncoded&hashtag=quote&via=TheEmerl&related=TheEmerl%3ADer%20Typ%20um%20den%27s%20hier%20geht%2CVeyxos%3AEr%20hat%20das%20alles%20hier%20verbrochen!\">Twittern</a></footer>";
+        <footer><a href=\"http://veyxos.de/fruchtsaft?not=$int\">Ein neues Zitat raussuchen.</a> | <a id=\"twttr\" href=\"https://twitter.com/intent/tweet?text=$quoteEncoded&hashtags=fruchtsaft&url=$thisLinkEncoded&hashtag=quote&via=TheEmerl&related=TheEmerl%3ADer%20Typ%20um%20den%27s%20hier%20geht%2CVeyxos%3AEr%20hat%20das%20alles%20hier%20verbrochen!\">Twittern</a></footer>";
       ?>
       <a id="gh" href="https://github.com/veyxos/fruchtsaft">GitHub</a>
     </main>
@@ -163,6 +169,7 @@
         }
       }
       ready(function(){
+        console.log('Fruchtsaft v1.2.2');
         document.getElementById('twttr').addEventListener('click',function(evt){
           evt.preventDefault();
           window.open(this.href, '_blank', 'location=yes,height=570,width=520,scrollbars=yes,status=yes');
