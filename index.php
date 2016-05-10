@@ -96,7 +96,7 @@
           12 => "Tischventilatoren sind toll,<br>die drehen sich!",
           13 => "Wie kriegen wir dieses Gesicht jetzt so hässlich wie möglich?",
           14 => "Die Hilde wird mich nicht aufhalten!",
-          15 => "Kauf dir Battleborn, Mike!"
+          15 => "Kauf dir Battleborn, [Insert Name here]!"
         );
         $cite = array(
           0 => "emerl",
@@ -168,8 +168,15 @@
           document.addEventListener('DOMContentLoaded',fn);
         }
       }
+      function w() {
+        alert('THERE IS NO WARRANTY FOR THE PROGRAM, TO THE EXTENT PERMITTED BY APPLICABLE LAW. EXCEPT WHEN OTHERWISE STATED IN WRITING THE COPYRIGHT HOLDERS AND/OR OTHER PARTIES PROVIDE THE PROGRAM “AS IS” WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESSED OR IMPLIED, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE. THE ENTIRE RISK AS TO THE QUALITY AND PERFORMANCE OF THE PROGRAM IS WITH YOU. SHOULD THE PROGRAM PROVE DEFECTIVE, YOU ASSUME THE COST OF ALL NECESSARY SERVICING, REPAIR OR CORRECTION.');
+      }
+      function c() {
+        window.open('https://www.gnu.org/licenses/gpl-3.0','_blank')
+      }
       ready(function(){
-        console.log('Fruchtsaft v1.2.2');
+        console.log('Fruchtsaft v1.2.2#2\nZitat Nr. ' + Math.floor(<?php print $int; ?> + 1));
+        console.log('\nFruchtsaft Copyright (C) 2016 Mike Kühnapfel\nThis program comes with ABSOLUTELY NO WARRANTY; for details type `w()\'.\nThis is free software, and you are welcome to redistribute it\nunder certain conditions; type `c()\' for details.');
         document.getElementById('twttr').addEventListener('click',function(evt){
           evt.preventDefault();
           window.open(this.href, '_blank', 'location=yes,height=570,width=520,scrollbars=yes,status=yes');
