@@ -96,7 +96,11 @@
           12 => "Tischventilatoren sind toll,<br>die drehen sich!",
           13 => "Wie kriegen wir dieses Gesicht jetzt so hässlich wie möglich?",
           14 => "Die Hilde wird mich nicht aufhalten!",
-          15 => "Kauf dir Battleborn, [Insert Name here]!"
+          15 => "Kauf dir Battleborn, [Insert Name here]!",
+          16 => "Ich kenne Ibach. Und naja … Ibach.",
+          17 => "Wie viele Ibachs passen in ein Glas Milch?",
+          18 => "Ibach 69, Ibach 69 🎶…",
+          19 => "Ich bade in Weed."
         );
         $cite = array(
           0 => "emerl",
@@ -114,7 +118,11 @@
           12 => "emerl",
           13 => "emerl",
           14 => "emerl",
-          15 => "emerl"
+          15 => "emerl",
+          16 => "emerl",
+          17 => "emerl",
+          18 => "emerl",
+          19 => "emerl"
         );
         $year = array(
           0 => "2015",
@@ -132,20 +140,26 @@
           12 => "2015",
           13 => "2016",
           14 => "2016",
-          15 => "2016"
+          15 => "2016",
+          16 => "2016",
+          17 => "2016",
+          18 => "2016",
+          19 => "2016"
         );
         $citeLink = array(
           "emerl" => '<a href="https://twitter.com/TheEmerl">TheEmerl</a>',
           "darky" => '<a href="https://twitter.com/Darkyyx">Darky</a>'
         );
 
-        if($_GET["q"] && $_GET["q"] <= 15 && $_GET["q"] >= 0) {
+        $maxQuote = 19;
+
+        if($_GET["q"] && $_GET["q"] <= $maxQuote && $_GET["q"] >= 0) {
           $int = $_GET["q"];
         } else {
-          $int = rand(0,15);
+          $int = rand(0,$maxQuote);
           if($_GET["not"]) {
             for( ;$int == $_GET["not"]; ) {
-               $int = rand(0,15);
+               $int = rand(0,$maxQuote);
             }
           }
         }
@@ -175,7 +189,7 @@
         window.open('https://www.gnu.org/licenses/gpl-3.0','_blank')
       }
       ready(function(){
-        console.log('Fruchtsaft v1.2.2#2\nZitat Nr. ' + Math.floor(<?php print $int; ?> + 1));
+        console.log('Fruchtsaft v1.2.2#3\nZitat Nr. ' + Math.floor(<?php print $int; ?> + 1));
         console.log('\nFruchtsaft Copyright (C) 2016 Mike Kühnapfel\nThis program comes with ABSOLUTELY NO WARRANTY; for details type `w()\'.\nThis is free software, and you are welcome to redistribute it\nunder certain conditions; type `c()\' for details.');
         document.getElementById('twttr').addEventListener('click',function(evt){
           evt.preventDefault();
