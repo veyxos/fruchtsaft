@@ -1,0 +1,119 @@
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:400,300)
+@import bourbon/bourbon
+
+$color: #004e66
+$highlight: #ff5f2e
+$highlight2: #fcbe32
+$bright: #e1eef6
+
+\:root
+  font:
+    family: "Open Sans", sans-serif
+    size: 14pt
+  color: $color
+  line-height: 1.5
+
+a
+  color: $highlight
+  text-decoration: none
+
+  &:hover
+    text-decoration: underline
+
+body
+  margin: 0
+
+  main
+    padding: 2rem 5vw
+    box-sizing: border-box
+    width: 100%
+    min-height: 100vh
+    +display(flex)
+    +justify-content(center)
+    +align-items(center)
+
+  #quoteWrapper
+    display: inline-block
+
+    blockquote
+      margin: 0
+      font-size: 2.8rem
+
+      @media screen and (max-width: 780px)
+        font-size: 2rem
+
+    cite
+      text-align: right
+      font-style: normal
+      display: block
+      font-weight: 300
+
+  footer
+    background: $color
+    color: $bright
+    padding: 2rem 5vw
+    +display(flex)
+    +justify-content(space-between)
+    +align-items(flex-start)
+    border-top: 4px solid $highlight
+    box-shadow: 0px 1px 8px rgba(#000,.6)
+
+    ul
+      margin: 0
+      padding: 0
+
+      li
+        display: inline-block
+
+        &:not(:last-child)
+          margin-right: 12px
+
+        #copyLink
+          cursor: pointer
+
+    a
+      color: inherit
+      +transition(all 180ms ease-in-out)
+
+      &:hover
+        color: $highlight2
+
+    @media screen and (max-width: 780px)
+      +flex-direction(column)
+
+      ul
+        order: 1
+
+      a
+        order: 2
+
+      div
+        order: 3
+
+      &>*
+        display: block
+        width: 100%
+        text-align: center
+
+        &:not(:first-child)
+          border-bottom: 1px solid rgba($bright, .2)
+          padding-bottom: .5rem
+          margin-bottom: .5rem
+
+    @media screen and (max-width: 400px)
+      ul li
+        display: block
+        position: relative
+        line-height: 1
+
+        &:not(:last-child)
+          margin-bottom: .66666rem
+
+          &:after
+            content: ""
+            +size(1.6rem 1px)
+            max-width: 60vw
+            background: rgba($bright, .15)
+            display: block
+            +position(absolute, null null -.33333rem 50%)
+            +transform(translateX(-50%))
