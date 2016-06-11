@@ -3,8 +3,10 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="initial-scale=1, width=device-width, height=device-height">
-    <link rel="shortcut icon" href="http://static-cdn.jtvnw.net/jtv_user_pictures/nocraptv-profile_image-676baad70c882607-300x300.png" type="image/png">
+    <link rel="shortcut icon" href="img/fruchtsaft-256.png" type="image/png">
     <link rel="stylesheet" href="app.css">
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#ff5f2e">
     <title>Fruchtsaft!</title>
   </head>
   <body>

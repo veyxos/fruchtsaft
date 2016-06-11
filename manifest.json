@@ -1,0 +1,26 @@
+{
+  "short_name": "Fruchtsaft",
+  "name": "Fruchtsaft – Zitate von und über Rmel",
+  "icons": [
+    {
+      "src": "img/fruchtsaft-96.png",
+      "sizes": "96x96",
+      "type": "image/png"
+    },
+    {
+      "src": "img/fruchtsaft-144.png",
+      "sizes": "144x144",
+      "type": "image/png"
+    },
+    {
+      "src": "img/fruchtsaft-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    }
+  ],
+  "start_url": "index.php",
+  "display": "standalone",
+  "orientation": "portrait",
+  "theme_color": "#ff5f2e",
+  "background_color": "#fcbe32"
+}
