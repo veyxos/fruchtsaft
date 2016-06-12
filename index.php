@@ -51,7 +51,7 @@
         <?php
           $linkNo = $q + 1;
           print "<li><a href=\"http://veyxos.de/fruchtsaft?not=" . $linkNo . "\">Neues Zitat</a></li>";
-          print "<li><a id=\"twttr\" target=\"_blank\" href=\"https://twitter.com/intent/tweet?text=" . urlencode(str_replace("<br>","\n",$quotes["quote"][$q]["q"])) . "&hashtags=fruchtsaft,quote&url=" . urlencode("http://veyxos.de/fruchtsaft?q=$linkNo") . "&via=TheEmerl&related=TheEmerl%3ADer%20Typ%20um%20den%27s%20hier%20geht%2CVeyxos%3AEr%20hat%20das%20alles%20hier%20verbrochen!\">Twittern</a>";
+          print "<li><a id=\"twttr\" target=\"_blank\" href=\"https://twitter.com/intent/tweet?text=" . urlencode(str_replace("<br>","\n",str_replace("</strong>","",str_replace("<strong>","",$quotes["quote"][$q]["q"])))) . "&hashtags=fruchtsaft,quote&url=" . urlencode("http://veyxos.de/fruchtsaft?q=$linkNo") . "&via=TheEmerl&related=TheEmerl%3ADer%20Typ%20um%20den%27s%20hier%20geht%2CVeyxos%3AEr%20hat%20das%20alles%20hier%20verbrochen!\">Twittern</a>";
           print "<li><a id=\"copyLink\">Link kopieren</a></li>";
         ?>
       </ul>
