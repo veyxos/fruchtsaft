@@ -71,12 +71,14 @@ body
         #copyLink
           cursor: pointer
 
-    a
+    a,#link__copy
       color: inherit
       +transition(all 180ms ease-in-out)
+      cursor: pointer
 
       &:hover
         color: $highlight2
+        text-decoration: underline
 
     @media screen and (max-width: 780px)
       +flex-direction(column)
