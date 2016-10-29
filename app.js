@@ -62,5 +62,7 @@ ready(function(){
     event.preventDefault();
     window.open(this.href, "_blank", "location=yes,height=570,width=520,scrollbars=yes,status=yes");
   });
+  
+  document.body.removeChild(document.getElementBy("nojs"));
 
 });
