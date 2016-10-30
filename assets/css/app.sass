@@ -27,10 +27,13 @@ body
     padding: 2rem 5vw
     box-sizing: border-box
     width: 100%
-    min-height: 100vh
+    min-height: calc(100vh - 100px)
     +display(flex)
     +justify-content(center)
     +align-items(center)
+
+    @media screen and (max-width: 780px)
+      min-height: calc(100vh - 4px)
 
   #quoteWrapper
     display: inline-block
@@ -51,12 +54,15 @@ body
   footer
     background: $color
     color: $bright
-    padding: 2rem 5vw
+    padding: 1.8rem 5vw
     +display(flex)
     +justify-content(space-between)
     +align-items(flex-start)
     border-top: 4px solid $highlight
     box-shadow: 0px 1px 8px rgba(#000,.6)
+    min-height: 100px
+    box-sizing: border-box
+
 
     ul
       margin: 0
@@ -86,7 +92,7 @@ body
       ul
         order: 1
 
-      a
+      .gh
         order: 2
 
       div

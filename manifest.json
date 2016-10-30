@@ -3,17 +3,17 @@
   "name": "Fruchtsaft \nZitate von und über Rmel",
   "icons": [
     {
-      "src": "img/fruchtsaft-96.png",
+      "src": "/assets/img/fruchtsaft-96.png",
       "sizes": "96x96",
       "type": "image/png"
     },
     {
-      "src": "img/fruchtsaft-144.png",
+      "src": "/assets/img/fruchtsaft-144.png",
       "sizes": "144x144",
       "type": "image/png"
     },
     {
-      "src": "img/fruchtsaft-192.png",
+      "src": "/assets/img/fruchtsaft-192.png",
       "sizes": "192x192",
       "type": "image/png"
     }

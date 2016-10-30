@@ -1,0 +1,11 @@
+:root {
+  color: #444;
+}
+body footer {
+  background: #bc0d47;
+  border-color: #ba4885;
+}
+body footer a:hover,
+body footer #link__copy:hover {
+  color: #48ba50;
+}

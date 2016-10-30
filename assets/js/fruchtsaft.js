@@ -20,7 +20,7 @@ ready(function(){
   }
 
   var xmlhttp = new XMLHttpRequest();
-  xmlhttp.open("GET", "/quotes.json", true);
+  xmlhttp.open("GET", "/assets/js/fruchtsaft.json", true);
   xmlhttp.onreadystatechange = function() {
     if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
       quotes = JSON.parse(xmlhttp.responseText);
@@ -62,7 +62,7 @@ ready(function(){
     event.preventDefault();
     window.open(this.href, "_blank", "location=yes,height=570,width=520,scrollbars=yes,status=yes");
   });
-  
+
   document.body.removeChild(document.getElementById("nojs"));
 
 });
