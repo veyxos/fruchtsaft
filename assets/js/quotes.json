@@ -1,5 +1,5 @@
 {
-  "quote": [
+  "fruchtsaft": [
     {
       "c": "fruchtsaft",
       "q": "Die Tür geht auf. Licht flutet den Raum. Meine Augen sind so stark geblendet, dass ich für mindestens 30 Sekunden nichts sehen kann.<br>Da steht sie. Eine Siluette. Mit einem Glas Fruchtsaft in der Hand.",
@@ -122,11 +122,41 @@
       "y": "2016"
     }
   ],
+  "anni": [
+    {
+      "c": "aeh",
+      "q": "Äääääh",
+      "by": "anni",
+      "y": "2000 bis <span id=\"today\">heute</span><script>document.getElementById('today').innerHTML = new Date().getFullYear();</script>"
+    },{
+      "c": "zitat",
+      "q": "Wir brauchen sone Zitate-Seite auch für Anni",
+      "by": "darky",
+      "y": "2016"
+    },{
+      "c": "hinzu",
+      "q": "Es wird noch schlimmer, wenn ich Anni noch hinzufüge",
+      "by": "darky",
+      "y": "2016"
+    },{
+      "c": "schutz",
+      "q": "Ich hätte mehr Schutz mitnehmen sollen",
+      "by": "anni",
+      "y": "2016"
+    },{
+      "c": "mandy",
+      "q": "Ich heiße nicht Mandy",
+      "by": "anni",
+      "y": "2014 bis 2016"
+    }
+  ],
   "by": [
     {
       "emerl": "<a href=\"https://twitter.com/TheEmerl\">The Emerl</a>",
       "darky": "<a href=\"https://twitter.com/Darkyyx\">Darky</a>",
-      "gronkh": "<a href=\"https://www.youtube.com/Gronkh\">Gronkh</a>"
+      "gronkh": "<a href=\"https://www.youtube.com/Gronkh\">Gronkh</a>",
+      "anni": "Anni",
+      "darky": "Darky"
     }
   ]
 }

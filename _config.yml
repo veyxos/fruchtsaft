@@ -1,0 +1,10 @@
+name: Fruchtsaft
+desription: Zitate von und über The Emerl.
+author: Veyxos
+author_email: veyxos@gmail.com
+category_dir: /
+baseurl:
+url: http://fruchtsaft.veyxos.de
+markdown: maroku
+permalink: pretty
+exclude: [CNAME,README.md]
