@@ -26,7 +26,7 @@ ready(function(){
         codes[quote_array[i]["c"]] = i;
       }
       function get_q(max,not) {
-        if (getValue["q"] && getValue["q"] >= 0 && getValue["q"] < max) {
+        if (getValue["q"] && getValue["q"] >= 0 && getValue["q"] <= max) {
           var q = getValue["q"];
         } else if (getValue["c"] && codes[getValue["c"]] >= 0 && codes[getValue["c"]] < max) {
           var q = codes[getValue["c"]];
@@ -46,7 +46,7 @@ ready(function(){
         document.getElementById("quote").innerHTML = quote_array[quote_no]["q"];
         document.getElementById("cite").innerHTML = "– " + quotes["by"][0][quote_array[quote_no]["by"]] + ", " + quote_array[quote_no]["y"];
       });
-      document.getElementById("link__tweet").href = "https://twitter.com/intent/tweet?text=" + encodeURI(quote_array[quote_no]["q"].replace(/<br>/g,"\n").replace(/<strong>/g,"").replace(/<\/strong>/g,"")) + "&hashtags=fruchtsaft,quote&url=" + encodeURI("https://fruchtsaft.veyxos.de/?c=" + quote_no) + "&via=TheEmerl&related=TheEmerl%3ADer%20Typ%20um%20den%27s%20hier%20geht%2CVeyxos%3AEr%20hat%20das%20alles%20hier%20verbrochen!";
+      document.getElementById("link__tweet").href = "https://twitter.com/intent/tweet?text=" + encodeURI(quote_array[quote_no]["q"].replace(/<br>/g,"\n").replace(/<strong>/g,"").replace(/<\/strong>/g,"")) + "&hashtags=fruchtsaft,quote&url=" + encodeURI("https://fruchtsaft.veyxos.de/?q=" + quote_no) + "&via=TheEmerl&related=TheEmerl%3ADer%20Typ%20um%20den%27s%20hier%20geht%2CVeyxos%3AEr%20hat%20das%20alles%20hier%20verbrochen!";
       document.getElementById("link__copy").setAttribute("data-clipboard-text","http://fruchtsaft.veyxos.de/?q=" + quote_no);
 
       document.getElementById("quote").innerHTML = quote_array[quote_no]["q"];
