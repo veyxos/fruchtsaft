@@ -21,7 +21,7 @@ ready(function(){
     if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
       quotes = JSON.parse(xmlhttp.responseText);
       quote_array = window.location.pathname == "/" || window.location.pathname == "/index.html" ? quotes["fruchtsaft"] : quotes["anni"];
-      for (var i = 0; i <= quote_array.length; i++) {
+      for (var i = 0; i < quote_array.length; i++) {
         codes.push(quote_array[i]["c"]);
         codes[quote_array[i]["c"]] = i;
       }
