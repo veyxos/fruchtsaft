@@ -25,10 +25,10 @@ ready(function(){
         codes.push(quote_array[i]["c"]);
         codes[quote_array[i]["c"]] = i;
       }
-      function get_q(max,not) {
-        if (getValue["q"] && getValue["q"] >= 0 && getValue["q"] <= max) {
+      function get_q(max,not,new_quote) {
+        if (getValue["q"] && getValue["q"] >= 0 && getValue["q"] <= max && new_quote != 1) {
           var q = getValue["q"];
-        } else if (getValue["c"] && codes[getValue["c"]] >= 0 && codes[getValue["c"]] <= max) {
+        } else if (getValue["c"] && codes[getValue["c"]] >= 0 && codes[getValue["c"]] <= max && new_quote != 1) {
           var q = codes[getValue["c"]];
         } else {
           var q = Math.round(Math.random() * max);
@@ -38,12 +38,12 @@ ready(function(){
             }
           }
         }
+        document.getElementById("link__new_quote").setAttribute("this_quote",q);
         return q;
       }
-      quote_no = get_q(quote_array.length - 1);
+      quote_no = get_q(quote_array.length - 1,document.getElementById("link__new_quote").getAttribute("this_quote"));
       document.getElementById("link__new_quote").addEventListener("click",function(){
-        window.location.search = "";
-        quote_no = get_q(quote_array.length - 1);
+        quote_no = get_q(quote_array.length - 1,this.getAttribute("this_quote"),1);
         document.getElementById("quote").innerHTML = quote_array[quote_no]["q"];
         document.getElementById("cite").innerHTML = "– " + quotes["by"][0][quote_array[quote_no]["by"]] + ", " + quote_array[quote_no]["y"];
       });
