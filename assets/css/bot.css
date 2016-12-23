@@ -10,6 +10,13 @@ html, body {
   padding: 0;
   background: #edeff2;
 }
+a {
+  color: #6441a5;
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: underline;
+}
 
 #header {
   background: #fff;
@@ -37,6 +44,7 @@ html, body {
 #header #navigation a:hover {
   background: #6441a5;
   color: #fff;
+  text-decoration: none;
 }
 
 main {
