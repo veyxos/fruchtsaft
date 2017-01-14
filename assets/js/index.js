@@ -108,13 +108,13 @@ $(document).ready(function(){
   };
 
   // Neues Zitat Button
-  $("#new_quote").click(function(event){
+  $("#emerl__new_quote").click(function(event){
     event.preventDefault();
-    if ($("#tab_emerl").hasClass("active")) {
-      newQuote("emerl");
-    } else if ($("#tab_anni").hasClass("active")) {
-      newQuote("anni");
-    }
+    newQuote("emerl");
+  });
+  $("#anni__new_quote").click(function(event){
+    event.preventDefault();
+    newQuote("anni");
   });
 
 });

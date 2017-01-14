@@ -6,11 +6,11 @@ body {
 .brand-logo:not(.center) {
   padding-left: 1.5rem;
 }
-.btn-floating {
+/*.btn-floating {
   position: fixed;
   bottom: 1.5rem;
   right: 1.5rem;
-}
+}*/
 blockquote {
   font-size: 1.8rem;
   border-left: none;
@@ -19,4 +19,8 @@ blockquote {
 
 .color-twitter {
   background-color: #1ad1f2 !important;
+}
+
+.btn-floating .material-icons {
+  pointer-events: none;
 }

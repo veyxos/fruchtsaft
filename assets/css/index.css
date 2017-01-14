@@ -3,4 +3,10 @@
 }
 .card-action a {
   cursor: pointer;
+  position: relative;
+}
+.card-action .btn-floating {
+  position: absolute;
+  top: -28px;
+  right: 2rem;
 }
