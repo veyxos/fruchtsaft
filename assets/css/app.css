@@ -1,0 +1,22 @@
+body {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+}
+.brand-logo:not(.center) {
+  padding-left: 1.5rem;
+}
+.btn-floating {
+  position: fixed;
+  bottom: 1.5rem;
+  right: 1.5rem;
+}
+blockquote {
+  font-size: 1.8rem;
+  border-left: none;
+  padding-left: 0;
+}
+
+.color-twitter {
+  background-color: #1ad1f2 !important;
+}

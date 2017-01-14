@@ -1,6 +1,2 @@
-### Sass ###
-.sass-cache/
-*.css.map
-
-### Jekyll ###
-_site/
+*/materialize.js
+*/materialize.css

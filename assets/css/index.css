@@ -1,0 +1,6 @@
+.content_container {
+  flex: 1 0 auto;
+}
+.card-action a {
+  cursor: pointer;
+}

@@ -1,38 +1,111 @@
----
----
-
 <!DOCTYPE html>
 <html>
   <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="initial-scale=1, width=device-width, height=device-height">
-    <link rel="shortcut icon" href="/assets/img/fruchtsaft-256.png" type="image/png">
+    <meta name="viewport" content="initial-scale=1,width=device-width">
+    <meta name="theme-color" content="#c0ca33">
+    <meta name="manifest" content="manifest.json">
+    <link rel="stylesheet" href="http://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="/assets/css/materialize.min.css">
     <link rel="stylesheet" href="/assets/css/app.css">
-    <link rel="manifest" href="manifest.json">
-    <meta name="theme-color" content="#ff5f2e">
-    <title>Fruchtsaft!</title>
-    <script src="/assets/js/app.js"></script>
-    <script src="/assets/js/clipboard.min.js"></script>
+    <link rel="stylesheet" href="/assets/css/index.css">
+    <link rel="shortcut icon" href="/assets/img/fruchtsaft.ico">
+    <link rel="icon" href="/assets/img/fruchtsaft.png" type="image/png" sizes="32x32">
+    <link rel="apple-touch-icon" href="/assets/img/fruchtsaft-180.png" sizes="180x180">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="/assets/fruchtsaft-144.png">
+    <title>Fruchtsaft</title>
   </head>
   <body>
-    <main>
-      <div id="quoteWrapper">
-        <blockquote id="quote"></blockquote><cite id="cite"></cite>
+    <!-- NAVBAR -->
+    <nav class="nav-extended lime darken-1">
+      <div class="nav-wrapper">
+        <a href="/" class="brand-logo">Fruchtsaft</a>
+        <a href="#" data-activates="side-nav" class="button-collapse"><i class="material-icons">menu</i></a>
+        <ul id="nav-mobile" class="right hide-on-med-and-down">
+          <li class="active"><a href="/">Fruchtsaft</a></li>
+          <li><a href="/bot">FruchtsaftBot</a></li>
+        </ul>
+        <ul id="side-nav" class="side-nav">
+          <li><a class="active" href="/">Fruchtsaft</a></li>
+          <li><a href="/bot">FruchtsaftBot</a></li>
+        </ul>
+
+        <ul class="tabs tabs-transparent">
+          <li class="tab"><a id="tab_emerl" class="active" href="#emerl">Emerl</a></li>
+          <li class="tab"><a id="tab_anni" href="#anni">Anni</a></li>
+        </ul>
       </div>
-    </main>
-    <footer>
-      <div id="copyright">
-        &copy; 2016 Mike Kühnapfel
+    </nav>
+
+    <!-- EMERL QUOTES -->
+    <div id="emerl" class="content_container col s12 valign-wrapper">
+      <div class="container">
+        <div class="card">
+          <div class="card-content">
+            <blockquote id="emerl_quote">Zitat wird geladen</blockquote>
+            <cite>– <span id="emerl_author">Fruchtsaft</span>, <date id="emerl_date">2017</date></cite>
+          </div>
+          <div id="emerl_actions" class="card-action"></div>
+          <div class="progress">
+            <div class="indeterminate"></div>
+          </div>
+        </div>
       </div>
-      <ul>
-        <li><span id="link__new_quote">Neues Zitat</span></li>
-        <li><a id="link__tweet" target="_blank" href="">Twittern</a></li>
-        <li><span id="link__copy" data-clipboard-text="hey">Link kopieren</span></li>
-      </ul>
-      <div class="gh">
-        <a href="/anni">Anni Quotes</a> | <a href="https://github.com/veyxos/fruchtsaft">GitHub</a>
+    </div>
+
+    <!-- ANNI QUOTES -->
+    <div id="anni" class="content_container col s12 valign-wrapper">
+      <div class="container">
+        <div class="card">
+          <div class="card-content">
+            <blockquote id="anni_quote">Zitat wird geladen</blockquote>
+            <cite>– <span id="anni_author">Fruchtsaft</span>, <date id="anni_date">2017</date></cite>
+          </div>
+          <div id="anni_actions" class="card-action"></div>
+          <div class="progress">
+            <div class="indeterminate"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- NEW QUOTE -->
+    <a data-tooltip="Neues Zitat" data-position="left" class="btn-floating btn-large red tooltipped" id="new_quote">
+      <i class="large material-icons">send</i>
+    </a>
+
+    <!-- FOOTER -->
+    <footer class="page-footer lime darken-1">
+      <div class="container">
+        <div class="row">
+          <div class="col l6 s12">
+            <h5 class="white-text">Fruchtsaft</h5>
+            <p class="grey-text text-lighten-4">This software ist licensed under the terms of the MIT-License.</p>
+          </div>
+          <div class="col l4 offset-l2 s12">
+            <h5 class="white-text">Links</h5>
+            <ul>
+              <li><a href="http://veyxos.de" class="grey-text text-lighten-3">Veyxos</a></li>
+              <li><a href="http://nocraptv.de" class="grey-text text-lighten-3">NoCrapTV</a></li>
+              <li><a href="http://veyxos.ddns.net:4242" class="grey-text text-lighten-3">Zitat Backend</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="footer-copyright">
+        <div class="container">
+          &copy; 2017 Mike Kühnapfel
+          <a href="/license.html" class="grey-text text-lighten-4 right">MIT-Lizenz</a>
+        </div>
       </div>
     </footer>
-    <div id="nojs" style="position:fixed;top:0;right:0;bottom:0;left:0;background:rgba(0,0,0,.8);color:#fff;text-shadow:0px 2px 3px rgba(0,0,0,.3);padding:2rem;box-sizing:border-box;display:flex;justify-content:center;align-items:center;" onload="this.parentElement.removeChild(this)">Bitte aktiviere JavaScript um diese Seite sehen zu können.</div>
+
+    <!-- SCRIPTS -->
+    <script src="http://code.jquery.com/jquery-3.1.1.min.js"></script>
+    <script src="/assets/js/materialize.min.js"></script>
+    <script src="/assets/js/clipboard.min.js"></script>
+    <script src="/assets/js/app.js"></script>
+    <script src="/assets/js/index.js"></script>
   </body>
 </html>
