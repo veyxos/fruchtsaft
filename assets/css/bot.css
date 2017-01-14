@@ -67,3 +67,6 @@ pre {
   align-items: baseline;
   flex-wrap: wrap;
 }
+.center_wrapper > * {
+  margin: 1rem;
+}

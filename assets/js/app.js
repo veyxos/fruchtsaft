@@ -10,6 +10,7 @@ String.prototype.replaceAll = function(search,replace) {
 $(document).ready(function(){
 
   $(".tooltipped").tooltip({html:true});
+  $(".button-collapse").sideNav();
 
   var clipboard = new Clipboard(".clipboard");
 
