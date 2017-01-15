@@ -28,4 +28,31 @@ $(document).ready(function(){
     $("#tab_controls").click();
   });
 
+  setTimeout(function() {
+    var fruchtsaft_list = document.getElementById("fruchtsaft_list_list");
+    var fruchtsaft_keys = [];
+    for (key in codenames.fruchtsaft) {
+      fruchtsaft_keys.push(key);
+    }
+    fruchtsaft_keys.sort();
+    for (var i = 0; i < fruchtsaft_keys.length; i++) {
+      var item = document.createElement("LI");
+      item.classList = "collection-item",
+      item.innerHTML = fruchtsaft_keys[i];
+      fruchtsaft_list.appendChild(item);
+    }
+    var anni_list = document.getElementById("anni_list_list");
+    var anni_keys = [];
+    for (key in codenames.anni) {
+      anni_keys.push(key);
+    }
+    anni_keys.sort();
+    for (var i = 0; i < anni_keys.length; i++) {
+      var item = document.createElement("LI");
+      item.classList = "collection-item";
+      item.innerHTML = anni_keys[i];
+      anni_list.appendChild(item);
+    }
+  },1500);
+
 });
