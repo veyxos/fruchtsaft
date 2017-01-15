@@ -1,7 +1,7 @@
 $(document).ready(function(){
 
   var quotes, codenames = {"fruchtsaft":{},"anni":{}};
-  $.getJSON("http://veyxos.ddns.net:4242",function(data){
+  $.getJSON("https://fruchtsaft-data.veyxos.de",function(data){
     quotes = data;
 
     for (var i = 0; i < quotes.fruchtsaft.length; i++) {
