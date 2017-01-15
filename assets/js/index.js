@@ -1,17 +1,5 @@
 $(document).ready(function(){
 
-  var quotes, codenames = {"fruchtsaft":{},"anni":{}};
-  $.getJSON("https://fruchtsaft-data.veyxos.de",function(data){
-    quotes = data;
-
-    for (var i = 0; i < quotes.fruchtsaft.length; i++) {
-      codenames["fruchtsaft"][quotes["fruchtsaft"][i]["codename"]] = i;
-    }
-    for (var i = 0; i < quotes.anni.length; i++) {
-      codenames["anni"][quotes["anni"][i]["codename"]] = i;
-    }
-  });
-
   var emerl__last_quote, anni__last_quote;
 
   setTimeout(function(){
