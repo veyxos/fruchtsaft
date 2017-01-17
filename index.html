@@ -9,304 +9,99 @@
       }
     </script>
     <meta name="viewport" content="initial-scale=1,width=device-width">
-    <meta name="theme-color" content="#6a1b9a">
-    <link rel="canonical" href="https://fruchtsaft.veyxos.de/bot/">
+    <meta name="theme-color" content="#c0ca33">
+    <link rel="canonical" href="https://fruchtsaft.veyxos.de/">
     <link rel="stylesheet" href="//fonts.googleapis.com/icon?family=Material+Icons">
     <link rel="stylesheet" href="/assets/css/materialize.min.css">
     <link rel="stylesheet" href="/assets/css/app.css">
-    <link rel="stylesheet" href="/assets/css/bot.css">
+    <link rel="stylesheet" href="/assets/css/index.css">
     <link rel="shortcut icon" href="/assets/img/fruchtsaft.ico">
     <link rel="icon" href="/assets/img/fruchtsaft.png" type="image/png" sizes="32x32">
     <link rel="apple-touch-icon" href="/assets/img/fruchtsaft-180.png" sizes="180x180">
     <link rel="manifest" href="/manifest.json">
     <meta name="msapplication-TileColor" content="#ffffff">
     <meta name="msapplication-TileImage" content="/assets/fruchtsaft-144.png">
-    <title>FruchtsaftBot</title>
-    <meta name="description" content="Twitch Chat Bot für Zitate von und über Emerl">
-    <meta name="keywords" content="fruchtsaftbot,fruchtsaft,chat,bot,twitch,tmi,zitate,quotes,emerl,theemerl,the emerl,nocraptv,nocrap,no crap tv, no crap,anni,theannicake,node.js,nodejs,node,js">
-    <meta property="og:title" content="FruchtsaftBot">
+    <title>Fruchtsaft</title>
+    <meta name="description" content="Saftig Spaß">
+    <meta name="keywords" content="fruchtsaft,zitate,quotes,emerl,theemerl,the emerl,nocraptv,nocrap,no crap tv, no crap,anni,theannicake">
+    <meta property="og:title" content="Fruchtsaft">
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://fruchtsaft.veyxos.de/bot/">
+    <meta property="og:url" content="https://fruchtsaft.veyxos.de/">
     <meta property="og:image" content="/assets/img/fruchtsaft-256.png">
-    <meta property="og:description" content="Twitch Chat Bot für Zitate von und über Emerl">
+    <meta property="og:description" content="Saftig Spaß">
     <meta property="og:locale" content="de_DE">
     <meta property="og:site_name" content="Fruchtsaft">
     <meta name="twitter:card" content="summary">
     <meta name="twitter:site" content="@veyxos">
-    <meta name="twitter:creator" content="@veyxos">
+    <meta name="twitter:creator" content="@TheEmerl">
   </head>
   <body>
     <!-- NAVBAR -->
-    <nav class="nav-extended purple darken-3">
+    <nav class="nav-extended lime darken-1">
       <div class="nav-wrapper">
         <a href="/" class="brand-logo">Fruchtsaft</a>
         <a href="#" data-activates="side-nav" class="button-collapse"><i class="material-icons">menu</i></a>
         <ul id="nav-mobile" class="right hide-on-med-and-down">
-          <li><a href="/">Fruchtsaft</a></li>
-          <li class="active"><a href="/bot">FruchtsaftBot</a></li>
+          <li class="active"><a href="/">Fruchtsaft</a></li>
+          <li><a href="/bot">FruchtsaftBot</a></li>
         </ul>
         <ul id="side-nav" class="side-nav">
-          <li><a href="/">Fruchtsaft</a></li>
-          <li><a class="active" href="/bot">FruchtsaftBot</a></li>
+          <li><a class="active" href="/">Fruchtsaft</a></li>
+          <li><a href="/bot">FruchtsaftBot</a></li>
         </ul>
 
         <ul class="tabs tabs-transparent">
-          <li class="tab"><a id="tab_whatis" class="active" href="#whatis">Einführung</a></li>
-          <li class="tab"><a id="tab_commands" href="#commands">Befehle</a></li>
-          <li class="tab"><a id="tab_controls" href="#controls">Steuerung</a></li>
+          <li class="tab"><a id="tab_emerl" class="active" href="#emerl">Emerl</a></li>
+          <li class="tab"><a id="tab_anni" href="#anni">Anni</a></li>
         </ul>
       </div>
     </nav>
 
-    <!-- WHAT IS -->
-    <div id="whatis" class="content_container col s12">
+    <!-- EMERL QUOTES -->
+    <div id="emerl" class="content_container col s12 valign-wrapper">
       <div class="container">
-        <h2>FruchtsaftBot</h2>
-        <p style="font-size: 1.3rem;padding: .3rem 0 1rem;">Einfacher Twitch Chat Bot.</p>
-        <p>Der FruchtsaftBot ist 2015 als Spaßprojekt entstanden um die Zitate, die auf <a href="/">Fruchtsaft</a> benannt sind in den Twitch Chat von Emerl (<a href="https://www.twitch.tv/nocraptv">NoCrapTV</a>) zu bringen.</p>
-        <p>Seitdem ist das Projekt stetig gewachsen und erledigt mittlerweile auch einfache Moderationsaufgaben, wie etwa das ausfiltern von Links.</p>
-        <div class="center_wrapper">
-          <a href="#commands" class="btn" id="toComs">Botbefehle</a>
-          <a href="#controls" class="btn" id="toControls">Kontrollbefehle</a>
+        <div class="card">
+          <div class="card-content">
+            <blockquote id="emerl_quote">Zitat wird geladen</blockquote>
+            <cite>– <span id="emerl_author">Fruchtsaft</span>, <date id="emerl_date">2017</date></cite>
+          </div>
+          <div id="emerl_actions" class="card-action">
+            <!-- NEW QUOTE -->
+            <a data-tooltip="Neues Zitat" data-position="left" class="btn-floating btn-large blue tooltipped" id="emerl__new_quote">
+              <i class="large material-icons">send</i>
+            </a>
+          </div>
+          <div class="progress">
+            <div class="indeterminate"></div>
+          </div>
         </div>
       </div>
     </div>
 
-    <!-- COMMAND -->
-    <div id="commands" class="content_container col s12">
-      <div class="container">
-        <h4>Befehle</h4>
-        <p>Befehle werden ganzh einfach mit vorangestellten <span class="inline_pre">!</span> in den Chat eines Channels geschrieben, indem sich der FruchtsaftBot befindet.</p>
-        <ul class="collapsible" data-collapsible="accordion">
-          <li>
-            <div class="collapsible-header">!anni <div class="chip">codename</div></div>
-            <div class="collapsible-body">
-              <p>Wird verwendet um ein beliebiges Zitat von oder über <a href="/#anni">Anni</a> aus zu geben.</p>
-              <h5>Codename</h5>
-              <p>Der <span class="chip">codename</span> Parameter akzeptiert jeden validen Codenamen für die Anni-Zitate.<br>Wird ein falscher Codename angegeben, so wird ein zufälliges Zitat ausgegeben.</p>
-              <a class="waves-effect waves-light btn" href="#anni_list">Codenamen</a>
-            </div>
-          </li>
-          <li>
-            <div class="collapsible-header">!commands</div>
-            <div class="collapsible-body">
-              <p><strong>Aliase:</strong> !coms !help</p>
-              <p>Zeigt den Link zu dieser Seite an.</p>
-            </div>
-          </li>
-          <li>
-            <div class="collapsible-header">!customCom <div class="chip">action</div> <div class="chip">command</div> <div class="chip">response</div> <div class="chip">cooldown</div> <span class="new badge red whitelist">whitelist</span></div>
-            <div class="collapsible-body">
-              <p>Fügt einen neuen benutzerdefinierten Befehl zu dem Channel hinzu, indem !customCom auferufen wird.</p>
-              <h5>Action</h5>
-              <p>Der <span class="chip">action</span> Parameter gibt die Aktion an, die FruchtsaftBot durchführen soll.<br>Mögliche Werte sind:</p>
-              <table class="bordered">
-                <thead>
-                  <tr>
-                    <th>Aktion</th>
-                    <th>Verwendung</th>
-                    <th></th>
-                  </tr>
-                </thead>
-                <tobdy>
-                  <tr>
-                    <td><strong>list</strong></td>
-                    <td>Gibt alle bereits definierten benutzerdefinierten des Channels an.<br>Kann alternativ auch genauere Informationen zu einem einzelnen Befehl anzeigen.</td>
-                    <td></td>
-                  </tr>
-                  <tr>
-                    <td><strong>add</strong></td>
-                    <td>Wird verwendet um einen neuen Befehl hinzuzufügen.</td>
-                    <td><span class="new badge red whitelist">whitelist</span></td>
-                  </tr>
-                  <tr>
-                    <td><strong>edit</strong></td>
-                    <td>Wird verwendet um einen bereits bestehenden Brfehl zu bearbeiten.</td>
-                    <td><span class="new badge red whitelist">whitelist</span></td>
-                  </tr>
-                  <tr>
-                    <td><strong>remove</strong></td>
-                    <td>Wird verwendet um einen Befehl zu entfernen.</td>
-                    <td><span class="new badge red whitelist">whitelist</span></td>
-                  </tr>
-                </tobdy>
-              </table>
-              <h5>Command</h5>
-              <p><span class="chip">command</span> stellt den eigentlichen Befehl dar.</p>
-              <h5>Response</h5>
-              <p><span class="chip">response</span> response wird lediglich mit den Aktionen <span class="inline_pre">add</span> und <span class="inline_pre">edit</span> verwendet um die Antwort des FruchtsaftBot anzugeben.<br>Diese wird in doppelte Anführungszeichen <span class="inline_pre">"response"</span> geschrieben.</p>
-              <p><span class="chip">response</span> akzeptiert zudem die Variablen <span class="inline_pre">{user}</span>, welche den Displaynamen des Nutzers der den Befehl ausgeführt hat enthält, und <span class="inline_pre">{random}</span>, welche einen zufälligen Nutzer im Chat benennt.</p>
-              <h5>Cooldown</h5>
-              <p><span class="chip">cooldown</span> gibt die Zeitspanne in Sekunden an, die ein normaler Nutzer warten muss, um einen Befehl zweimal nacheinander ausführen zu können.<br>Valide Werte sind natürliche Zahlen, oder das Flag <span class="inline_pre">-w</span>, welches den Befehl nur für Nutzer auf der Whitelist ausführbar macht.</p>
-            </div>
-          </li>
-          <li>
-            <div class="collapsible-header">!darky</div>
-            <div class="collapsible-body">
-              <p>Einer der behämmersten Sprüche, den die Menschheit je gesehen hat.</p>
-            </div>
-          </li>
-          <li>
-            <div class="collapsible-header">!fruchtsaft <div class="chip">codename</div></div>
-            <div class="collapsible-body">
-              <p>Wird verwendet um ein beliebiges Zitat von oder über <a href="/#emerl">Emerl</a> aus zu geben.</p>
-              <h5>Codename</h5>
-              <p>Der <span class="chip">codename</span> Parameter akzeptiert jeden validen Codenamen für die Emerl-Zitate.<br>Wird ein falscher Codename angegeben, so wird ein zufälliges Zitat ausgegeben.</p>
-              <a class="waves-effect waves-light btn" href="#fruchtsaft_list">Codenamen</a>
-            </div>
-          </li>
-          <li>
-            <div class="collapsible-header">!fruchtsaftbot</div>
-            <div class="collapsible-body">
-              <p>Gibt eine nicht ganz so umfassende Erklärung zum Fruchtsaftbot.</p>
-            </div>
-          </li>
-          <li>
-            <div class="collapsible-header">!fruchtsaftbot ver</div>
-            <div class="collapsible-body">
-              <p>Gibt die aktuelle Version des FruchtsaftBot aus.</p>
-            </div>
-          </li>
-          <li>
-            <div class="collapsible-header">!infoText <div class="chip">action</div> <div class="chip">text</div> <span class="new badge red whitelist">whitelist</span></div>
-            <div class="collapsible-body">
-              <p>Wird verwendet, um die automatisch von FruchtsaftBot geposteten Informationen anzupassen.</p>
-              <h5>Action</h5>
-              <p>Der <span class="chip">action</span> Parameter gibt die Aktion an, die FruchtsaftBot durchführen soll.<br>Mögliche Werte sind:</p>
-              <table class="bordered">
-                <thead>
-                  <tr>
-                    <th>Aktion</th>
-                    <th>Verwendung</th>
-                  </tr>
-                </thead>
-                <tobdy>
-                  <tr>
-                    <td><strong>list</strong></td>
-                    <td>Gibt alle für diesen Channel eingestellten Info-Texte an.<br>FruchtsaftBot antwortet aus Gründen der übersicht in einem Whisper.</td>
-                  </tr>
-                  <tr>
-                    <td><strong>add</strong></td>
-                    <td>Wird verwendet um einen neuen Text hinzuzufügen.</td>
-                  </tr>
-                  <tr>
-                    <td><strong>remove</strong></td>
-                    <td>Wird verwendet um einen neuen Text zu entfernen.</td>
-                  </tr>
-                </tobdy>
-              </table>
-              <h5>text</h5>
-              <p><span class="chip">text</span> enthält für die Aktion <span class="inline_pre">add</span> den Text, den FruchtsaftBot ausgeben soll.<br>Für die Aktion <span class="inline_pre">remove</span> muss der Zahlencode des zu entfernenden Textes angegeben weden. Dieser kann mit <span class="inline_pre">!infoText list</span> erfragt werden.</p>
-            </div>
-          </li>
-          <li>
-            <div class="collapsible-header">!permit <div class="chip">user</div> <span class="new badge red whitelist">whitelist</span></div>
-            <div class="collapsible-body">
-              <p>Wird verwendet, um es einem Nutzer, der nicht auf der Whitelist steht zu erlauben einen beliebigen Link zu posten.</p>
-              <h5>User</h5>
-              <p>der <span class="chip">user</span> Parameter enthalt dern username des zu permittenden Nutzers.</p>
-            </div>
-          </li>
-          <li>
-            <div class="collapsible-header">!url</div>
-            <div class="collapsible-body">
-              <p>Der Link zu dieser Seite.</p>
-            </div>
-          </li>
-          <li>
-            <div class="collapsible-header">!whitelist <div class="chip">action</div> <div class="chip">user</div> <div class="chip">channel flag</div> <div class="chip">channel</div> <span class="new badge red whitelist">whitelist</span></div>
-            <div class="collapsible-body">
-              <p>Wird verwendet um die Whitelist zu bearbeiten.</p>
-              <h5>Action</h5>
-              <p>Der <span class="chip">action</span> Parameter gibt die Aktion an, die FruchtsaftBot durchführen soll.<br>Mögliche Werte sind:</p>
-              <table class="bordered">
-                <thead>
-                  <tr>
-                    <th>Aktion</th>
-                    <th>Verwendung</th>
-                  </tr>
-                </thead>
-                <tobdy>
-                  <tr>
-                    <td><strong>list</strong></td>
-                    <td>Gibt alle Nutzer an, die auf der Whitelist stehen.</td>
-                  </tr>
-                  <tr>
-                    <td><strong>add</strong></td>
-                    <td>Fügt der Whitelist einen neuen Nutzer hinzu.</td>
-                  </tr>
-                  <tr>
-                    <td><strong>remove</strong></td>
-                    <td>Löscht einen Nutzer von der Whitelist.</td>
-                  </tr>
-                </tobdy>
-              </table>
-              <h5>User</h5>
-              <p><span class="chip">user</span> ist der Nutzername, der geändert werden soll.</p>
-              <h5>Channel Flag</h5>
-              <p>Das <span class="chip">channel flag</span> wird verwendet, um eine andere Whitelist, asl die des aktuellen Channels anzupassen. Dabei wird unterschieden zwischen <span class="inline_pre">-c</span> für einen anderen Channel und <span class="inline_pre">-g</span> für die globale Whitelist.</p>
-              <h5>Channel</h5>
-              <p>Wenn <span class="chip">channel flag</span> auf <span class="inline_pre">-c</span> gesetzt ist, kann mit <span class="chip">channel</span> die whitelist eines anderen Channels bearbeitet werden.</p>
-            </div>
-          </li>
-        </ul>
-      </div>
-    </div>
-
-    <!-- CONTROLS -->
-    <div id="controls" class="content_container col s12">
-      <div class="container">
-        <h4>Steuerung</h4>
-        <p>Befehle zu Steuerung werden an den Bot gewhispert.</p>
-        <ul class="collapsible" data-collapsible="accordion">
-          <li>
-            <div class="collapsible-header">!ping</div>
-            <div class="collapsible-body">
-              <p>Pong!</p>
-            </div>
-          </li>
-          <li>
-            <div class="collapsible-header">!quote <div class="chip">action</div> <div class="chip">type</div> <div class="chip">codename</div> <div class="chip">quote</div> <div class="chip">author</div> <div class="chip">date</div> <span class="new badge grey darken-1 whitelist-g">global whitelist</span> <span class="new badge blue wip">wip</span></div>
-            <div class="collapsible-body">
-              <p><strong>Work In Progress</strong></p>
-              <p>Wird verwendet um neue Zitate zur Datenbank hinzuzufügen, zu bearbeiten, oder zu löschen.</p>
-            </div>
-          </li>
-          <li>
-            <div class="collapsible-header">!quit <span class="new badge grey darken-3 whitelist-veyxos">veyxos</span></div>
-            <div class="collapsible-body">
-              <p><strong>Alias:</strong> !stop</p>
-              <p>Schaltet FruchtsaftBot aus bzw. startet ihn neu, sofern das Script als Daemon läuft.</p>
-            </div>
-          </li>
-          <li>
-            <div class="collapsible-header">!ver</div>
-            <div class="collapsible-body">
-              <p>Git die aktuelle Version von FruchtsaftBot an.</p>
-            </div>
-          </li>
-        </ul>
-      </div>
-    </div>
-
-    <!-- FRUCHTSAFT QUOTES -->
-    <div id="fruchtsaft_list" class="modal bottom-sheet">
-      <div class="modal-content">
-        <h4>Mögliche Codenamen für !fruchtsaft</h4>
-        <ul id="fruchtsaft_list_list" class="collection"></ul>
-      </div>
-    </div>
-
     <!-- ANNI QUOTES -->
-    <div id="anni_list" class="modal bottom-sheet">
-      <div class="modal-content">
-        <h4>Mögliche Codenamen für !anni</h4>
-        <ul id="anni_list_list" class="collection"></ul>
+    <div id="anni" class="content_container col s12 valign-wrapper">
+      <div class="container">
+        <div class="card">
+          <div class="card-content">
+            <blockquote id="anni_quote">Zitat wird geladen</blockquote>
+            <cite>– <span id="anni_author">Fruchtsaft</span>, <date id="anni_date">2017</date></cite>
+          </div>
+          <div id="anni_actions" class="card-action">
+            <!-- NEW QUOTE -->
+            <a data-tooltip="Neues Zitat" data-position="left" class="btn-floating btn-large blue tooltipped" id="anni__new_quote">
+              <i class="large material-icons">send</i>
+            </a>
+          </div>
+          <div class="progress">
+            <div class="indeterminate"></div>
+          </div>
+        </div>
       </div>
     </div>
+
 
     <!-- FOOTER -->
-    <footer class="page-footer purple darken-3">
+    <footer class="page-footer lime darken-1">
       <div class="container">
         <div class="row">
           <div class="col l6 s12">
@@ -336,6 +131,6 @@
     <script src="/assets/js/materialize.min.js"></script>
     <script src="/assets/js/clipboard.min.js"></script>
     <script src="/assets/js/app.js"></script>
-    <script src="/assets/js/bot.js"></script>
+    <script src="/assets/js/index.js"></script>
   </body>
 </html>
